@@ -1,0 +1,19 @@
+{
+  "name": "interactive_card_details",
+  "version": "1.0.0",
+  "description": "Creates card details from user's input",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch"
+  },
+  "author": "Oluchi Onyeguke",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.8",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "tailwindcss": "^4.0.8"
+  }
+}

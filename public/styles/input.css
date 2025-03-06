@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+.contained-image{
+    @apply bg-no-repeat bg-contain rounded-xl bg-center w-[78%] h-[220px];
+}
+
+.top-container{
+    @apply bg-[url(/images/bg-main-mobile.png)] w-full h-[270px] bg-cover text-[#dedddf] bg-center bg-no-repeat relative sm:bg-[url(/images/bg-main-desktop.png)] sm:h-screen sm:w-[30%];
+}
+
+.back-card{
+    @apply bg-[url(/images/bg-card-back.png)] relative top-[10px] left-[80px] sm:left-[300px] sm:top-[230px] sm:shadow-2xl;
+}
+
+.front-card{
+    @apply bg-[url(/images/bg-card-front.png)] absolute top-[118px] left-[20px] z-10 tracking-widest flex flex-col justify-between px-6 py-10 sm:relative sm:left-[250px] sm:top-[200px];
+}
+
+label{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 8px;
+    letter-spacing: 0.1rem;
+}
+
+.error{
+    @apply text-[#ff5252] tracking-normal normal-case text-xs block;
+}
+
+.error-b-color{
+    border-color: #ff5252;
+}
+
+input{
+    outline: none;
+    appearance: none;
+    border: 1px solid #dedddf;
+    padding: 10px 0 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 20px;
+    transition: border 0.3s ease;
+    cursor: pointer;
+}
+
+input:focus{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    border-image: linear-gradient(to right, #6448fe, #600594) 1;
+    border-image-slice: 1;
+    border-image-width: 1;
+    border-image-outset: 1;
+    border-image-repeat: stretch;
+    outline: none;
+}
+
+input::placeholder{
+    color: #dedddf;
+    font-size: 20px;
+    letter-spacing: normal;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+@media (min-width: 640px){
+    .contained-image{
+        @apply w-[400px] h-[219px];
+    }
+}

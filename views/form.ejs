@@ -1,0 +1,62 @@
+<form
+  action="/submit"
+  method="post"
+  class="mt-28 mb-14 flex flex-col px-6 text-[#21092f] gap-6 sm:mt-0 sm:mb-0 sm:w-[38%]"
+>
+  <label for="card_holder_name"
+    >Cardholder Name
+    <input
+      type="text"
+      name="card_holder_name"
+      placeholder="e.g. Jane Appleseed"
+      required
+    />
+  </label>
+
+  <label for="card_number"
+    >Card Number
+    <input
+      id="card_number"
+      type="number"
+      name="card_number"
+      placeholder="e.g. 1234 5678 9123 0000"
+      required
+      maxlength="19"
+    />
+    <p class="cnumber-error hidden">Please enter a valid 16-digit Card number</p>
+  </label>
+
+  <div class="flex gap-3">
+    <label for="exp_date" class="w-1/2">
+      Exp. Date (MM/YY)
+      <div class="flex gap-2.5">
+        <input
+          id="month"
+          type="number"
+          name="month"
+          placeholder="MM"
+          required
+          class="w-1/2"
+        />
+        <input
+          id="year"
+          type="number"
+          name="year"
+          placeholder="YY"
+          required
+          class="w-1/2"
+        />
+      </div>
+    </label>
+
+    <label for="cvc" class="w-1/2"
+      >CVC
+      <input id="cvc" type="number" name="cvc" placeholder="e.g. 123" required />
+      <p class="cvc-error hidden">Please enter a valid 3-digit CVC</p>
+    </label>
+  </div>
+
+  <button type="submit" class="bg-[#21092f] text-[#dedddf] rounded-lg py-3.5 cursor-pointer">
+    Confirm
+  </button>
+</form>

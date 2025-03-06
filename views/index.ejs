@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/output.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="font-[Space_Grotesk] text-lg tracking-wider sm:flex">
+
+  <div class="top-container">
+
+    <div class="front-card contained-image">
+      <img src="/images/card-logo.svg" alt="" class="w-18 h-10">
+      <div class="flex flex-col gap-3.5">
+        <h1 class="text-white text-lg tracking-[0.15rem] sm:text-2xl">
+          <% if(locals.cardNumber){ %>
+            <%= cardNumber %>
+          <% }else{ %>
+          0000 0000 0000 0000
+          <% } %>
+        </h1>  
+        <div class="text-[10px] flex justify-between sm:text-xs">
+          <p class="uppercase">
+            <% if(locals.cardName){ %>
+              <%= cardName %>
+            <% }else{ %>
+              Jane Appleseed
+            <% } %>
+          </p>
+          <p>
+            <% if(locals.expiringMonth && locals.expiringYear){ %>
+              <%= expiringMonth %>/<%= expiringYear %>
+            <% }else{ %>
+              00/00
+            <% } %>
+            
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="back-card contained-image">
+      <p class="relative top-[100px] right-[45px] text-[10px] flex justify-end">
+        <% if(locals.usercvc){ %>
+          <%= usercvc %>
+        <% }else{ %>
+          000
+        <% } %>
+
+      </p>
+    </div>
+
+  </div>
+
+  <div class="sm:flex sm:justify-center sm:items-center sm:w-[70%]">
+    <% if(locals.showResult){ %>
+      <%- include('completed.ejs') %>
+    <% }else{ %>
+      <%- include('form.ejs') %>
+    <% } %>
+  </div>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="/js/validations.js"></script>
+</body>
+</html>
