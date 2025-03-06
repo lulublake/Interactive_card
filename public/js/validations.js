@@ -71,14 +71,14 @@ form.on('submit', function(e) {
     
     if (!/^\d{3}$/.test(cvc)) { // This block runs if the CVC is NOT exactly 3 digits
       e.preventDefault();
-      $(".cvc-error").toggleClass("error");
+      $(".cvc-error").toggleClass("error error-b-color");
     }else {
         console.log("Validation passed");
     }
 
     if (!/^\d{16}$/.test(cardNo)) { // This block runs if the Card number is NOT exactly 16 digits
         e.preventDefault();
-        $(".cnumber-error").toggleClass("error");
+        $(".cnumber-error").toggleClass("error error-b-color");
       }else {
           console.log("Validation passed");
       }
